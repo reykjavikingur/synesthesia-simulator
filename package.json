@@ -1,0 +1,22 @@
+{
+  "name": "angular-starter-simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "serve": "gulp serve",
+    "develop": "gulp develop"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.3",
+    "angular-color-picker": "^1.0.8",
+    "browser-sync": "^2.8.2",
+    "gulp": "^3.9.0",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
+  }
+}

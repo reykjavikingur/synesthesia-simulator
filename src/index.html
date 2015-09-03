@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Angular Starter Kit</title>
+<link rel="stylesheet" type="text/css" href="js/lib/angular-color-picker.css" />
+<link rel="stylesheet" type="text/css" href="css/synesthesia.css" />
+</head>
+<body>
+
+<div ng-app="mc.synesthesia" class="synesthesia">
+	<h1>Synesthesia Simulator</h1>
+
+	<div ng-controller="SynesthesiaController">
+
+		<textarea id="sample-text-input" ng-model="sampleText" maxlength="500"></textarea>
+
+		<p class="sample-text"><mc-synesthesize text="{{sampleText}}" color-map="{{colorMap}}"></mc-synesthesize></p>
+
+		<style type="text/css" ng-repeat="grapheme in graphemes">
+		.syn{{grapheme}} {
+			color: {{colorMap[grapheme]}};
+		}
+		</style>
+
+		<ul class="graphemes">
+			<li ng-repeat="grapheme in graphemes" 
+				ng-click="selectGrapheme(grapheme)"
+				ng-style="{'color': colorMap[grapheme]}"
+				ng-class="{'selected': grapheme == selectedGrapheme}"
+				>
+				<span ng-bind="grapheme"></span>
+			</li>
+		</ul>
+
+		<div class="color-picker-container">
+			<color-picker ng-model="colorMap[selectedGrapheme]"></color-picker>
+		</div>
+
+		<div class="file-controls">
+			<h2>Color Map</h2>
+			<div class="file-controls__save">
+				<button ng-click="downloadColorMap()">Export</button>
+			</div>
+			<div class="file-controls__load">
+				Import: <input type="file" mc-file-data-url="fileDataUrl" />
+			</div>
+
+		</div>
+
+	</div>
+	
+</div>
+
+<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/angular.min.js"></script>
+<script type="text/javascript" src="js/lib/angular-color-picker.js"></script>
+<script type="text/javascript" src="js/synesthesia.js"></script>
+
+</body>
+</html>

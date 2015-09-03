@@ -1,0 +1,33 @@
+.synesthesia #sample-text-input {
+	width: 100%;
+	height: 6em;
+}
+
+.synesthesia .sample-text {
+	font-size: 14pt;
+	font-family: Tahoma;
+	background-color: #ccc;
+	text-shadow: 1px 1px 1px #666;
+}
+
+.synesthesia .graphemes li {
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: Tahoma;
+	display: inline-block;
+	padding: 0.3em 0.3em;
+	cursor: pointer;
+	border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.synesthesia .graphemes li:hover {
+	border: 1px solid #999;
+}
+
+.synesthesia .graphemes li.selected {
+	border: 1px solid #000;
+}
+
+.synesthesia .color-picker-container {
+	text-align: center;
+}
