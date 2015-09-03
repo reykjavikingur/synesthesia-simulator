@@ -49,7 +49,7 @@ angular.module('mc.synesthesia', ['mp.colorPicker'])
 
 })
 
-.controller('SynesthesiaController', function($scope, $log, SynesthesiaColorMapService) {
+.controller('SynesthesiaController', function($scope, $log, $http, SynesthesiaColorMapService) {
 
 	// Initialization
 
@@ -65,8 +65,15 @@ angular.module('mc.synesthesia', ['mp.colorPicker'])
 
 	$scope.fileDataUrl = null;
 
+	$http.get('assets/json/color-map.json')
+		.then(function(response) {
+			var colorMap = response.data;
+			SynesthesiaColorMapService.validate(colorMap);
+			$scope.colorMap = colorMap;
+		});
+
 	// Watchers
-	
+
 	$scope.$watch('fileDataUrl', function(fileDataUrl) {
 		if (Boolean(fileDataUrl)) {
 			$scope.colorMap = SynesthesiaColorMapService.fromDataUrl(fileDataUrl);

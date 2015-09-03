@@ -5,9 +5,14 @@ var bs = browserSync.create();
 
 gulp.task('default', ['build']);
 
-gulp.task('build', ['build:jslib'], function() {
+gulp.task('build', ['build:assets', 'build:jslib'], function() {
 	return gulp.src('src/**/*.*')
 		.pipe(gulp.dest('dst'));
+});
+
+gulp.task('build:assets', function() {
+	return gulp.src('assets/**/*')
+		.pipe(gulp.dest('dst/assets'));
 });
 
 gulp.task('build:jslib', function() {
