@@ -58,6 +58,10 @@ angular.module('mc.synesthesia', ['mp.colorPicker'])
 
 	// Initialization
 
+	var modes = ['simulation', 'configuration', 'files'];
+
+	$scope.mode = modes[0];
+
 	$scope.sampleText = SYNESTHESIA_SAMPLE_TEXT;
 
 	$scope.graphemes = SynesthesiaColorMapService.graphemes();

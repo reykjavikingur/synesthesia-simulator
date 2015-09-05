@@ -1,3 +1,7 @@
+.clear {
+	clear: both;
+}
+
 .synesthesia {
 	font-family: Georgia;
 }
@@ -14,7 +18,11 @@
 	text-shadow: 1px 1px 1px #666;
 }
 
-.synesthesia .graphemes li {
+.synesthesia .color-picker-container {
+	text-align: center;
+}
+
+.synesthesia ul.graphemes li {
 	font-size: 24pt;
 	font-weight: bold;
 	font-family: Tahoma;
@@ -24,14 +32,28 @@
 	border: 1px solid rgba(0, 0, 0, 0);
 }
 
-.synesthesia .graphemes li:hover {
+.synesthesia ul.graphemes li:hover {
 	border: 1px solid #999;
 }
 
-.synesthesia .graphemes li.selected {
+.synesthesia ul.graphemes li.selected {
 	border: 1px solid #000;
 }
 
-.synesthesia .color-picker-container {
-	text-align: center;
+.synesthesia ul.dashboard li {
+	font-weight: bold;
+	padding: 0.4em 0.4em;
+	display: inline-block;
+	cursor: pointer;
+	border: 1px solid #000;
+}
+
+.synesthesia ul.dashboard li.selected {
+	background-color: #06c;
+	color: #fff;
+}
+
+.synesthesia .dashboard-panel {
+	border: 1px solid #000;
+	padding: 1em 4%;
 }

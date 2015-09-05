@@ -12,38 +12,58 @@
 
 	<div ng-controller="SynesthesiaController">
 
-		<textarea id="sample-text-input" ng-model="sampleText" maxlength="500"></textarea>
-
-		<p class="sample-text"><mc-synesthesize text="{{sampleText}}" color-map="{{colorMap}}"></mc-synesthesize></p>
-
 		<style type="text/css" ng-repeat="grapheme in graphemes">
 		.syn{{grapheme}} {
 			color: {{colorMap[grapheme]}};
 		}
 		</style>
 
-		<ul class="graphemes">
-			<li ng-repeat="grapheme in graphemes" 
-				ng-click="selectGrapheme(grapheme)"
-				ng-style="{'color': colorMap[grapheme]}"
-				ng-class="{'selected': grapheme == selectedGrapheme}"
-				>
-				<span ng-bind="grapheme"></span>
-			</li>
+		<ul class="dashboard">
+			<li ng-class="{selected: mode == 'simulation'}" ng-click="mode = 'simulation'">Simulation</li>
+			<li ng-class="{selected: mode == 'configuration'}" ng-click="mode = 'configuration'">Configuration</li>
+			<li ng-class="{selected: mode == 'files'}" ng-click="mode = 'files'">Files</li>
 		</ul>
 
-		<div class="color-picker-container">
-			<color-picker ng-model="colorMap[selectedGrapheme]"></color-picker>
-		</div>
+		<div class="dashboard-panel">
 
-		<div class="file-controls">
-			<h2>Color Map</h2>
-			<div class="file-controls__save">
-				<button ng-click="downloadColorMap()">Export</button>
-			</div>
-			<div class="file-controls__load">
-				Import: <input type="file" mc-file-data-url="fileDataUrl" />
-			</div>
+			<section class="simulation" ng-show="mode == 'simulation'">
+
+				<textarea id="sample-text-input" ng-model="sampleText" maxlength="500"></textarea>
+
+				<p class="sample-text"><mc-synesthesize text="{{sampleText}}" color-map="{{colorMap}}"></mc-synesthesize></p>
+
+			</section>
+
+			<section class="configuration" ng-show="mode == 'configuration'">
+
+				<div class="color-picker-container">
+					<color-picker ng-model="colorMap[selectedGrapheme]"></color-picker>
+				</div>
+
+				<ul class="graphemes">
+					<li ng-repeat="grapheme in graphemes" 
+						ng-click="selectGrapheme(grapheme)"
+						ng-style="{'color': colorMap[grapheme]}"
+						ng-class="{'selected': grapheme == selectedGrapheme}"
+						>
+						<span ng-bind="grapheme"></span>
+					</li>
+				</ul>
+
+				<div class="clear"></div>
+
+			</section>
+
+			<section class="file-controls" ng-show="mode == 'files'">
+
+				<div class="file-controls__save">
+					To save as file: <button ng-click="downloadColorMap()">Export</button>
+				</div>
+				<div class="file-controls__load">
+					To import from file: <input type="file" mc-file-data-url="fileDataUrl" />
+				</div>
+
+			</section>
 
 		</div>
 
