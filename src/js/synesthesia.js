@@ -118,7 +118,10 @@ angular.module('mc.synesthesia', ['mp.colorPicker'])
 					var chars = text.split('');
 					_.each(chars, function(char) {
 						var grapheme = char.toUpperCase();
-						if (colorMap.hasOwnProperty(grapheme)) {
+						if (char === '\n') {
+							html += '<br/>';
+						}
+						else if (colorMap.hasOwnProperty(grapheme)) {
 							html += '<span class="syn' + grapheme + '">' + char + '</span>';
 						} else {
 							html += char;
