@@ -1,5 +1,10 @@
 angular.module('mc.synesthesia', ['mp.colorPicker'])
 
+.constant(
+	'SYNESTHESIA_SAMPLE_TEXT',
+	'Grapheme-color synesthesia is a condition causing a person to experience each symbol (character of the alphabet and digit) as though it were a particular color, in addition to the physical color with which it was printed or displayed on a screen.'
+)
+
 .service('SynesthesiaColorMapService', function() {
 
 	var GRAPHEME_STRING = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -49,11 +54,11 @@ angular.module('mc.synesthesia', ['mp.colorPicker'])
 
 })
 
-.controller('SynesthesiaController', function($scope, $log, $http, SynesthesiaColorMapService) {
+.controller('SynesthesiaController', function($scope, $log, $http, SYNESTHESIA_SAMPLE_TEXT, SynesthesiaColorMapService) {
 
 	// Initialization
 
-	$scope.sampleText = 'Grapheme-color synesthesia is a condition causing a person to experience each symbol (character of the alphabet and digit) as though it were a particular color, in addition to the physical color with which it was printed or displayed on a screen.';
+	$scope.sampleText = SYNESTHESIA_SAMPLE_TEXT;
 
 	$scope.graphemes = SynesthesiaColorMapService.graphemes();
 
