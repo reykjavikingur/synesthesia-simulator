@@ -1,33 +1,6 @@
-# Front End Starter
+# Synesthesia Simulator
 
-Starter project for front-end web UX development.
-
-Intended for iterative, collaborative development of prototypes, demos, and integration guides of responsive web experiences.
-
-## Features
-
-* local express web server with browser-sync
-* auto-open server
-* file watch and automatic reload
-* js concatenation and minification with browserify
-* external library path for browserify
-* externalize source map
-* bower support
-* sass support
-* directory structure for static assets
-* automation support for continuous integration
-
-[About the starter project](tasks/starter.md)
-
-## Initial Setup
-
-* fork and rename the repo
-* `nvm use 5.9.1` or higher
-* `git clone $repo_url`
-* `cd $clone_dir`
-* `vi package.json` and fix name
-* open the directory in your preferred IDE (e.g. WebStorm, Sublime)
-* add external dependencies with Bower or NPM
+synesim
 
 ## Usage
 
