@@ -9,7 +9,7 @@
     "bower": "bower",
     "postinstall": "bower install",
     "start": "gulp",
-    "test": "karma start"
+    "test": "gulp test"
   },
   "keywords": [],
   "author": "",
