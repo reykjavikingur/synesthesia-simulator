@@ -118,7 +118,7 @@ describe('HtmlGenerator', function() {
 				it('should have one span', function() {
 					expect(el.find('span').length).toEqual(1);
 				});
-				fit('should have correct class on the one span', function() {
+				it('should have correct class on the one span', function() {
 					expect(el.find('span').eq(0).attr('class')).toEqual('synesim-k');
 				});
 			});

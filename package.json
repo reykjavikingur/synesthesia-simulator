@@ -22,6 +22,7 @@
     "bower": "^1.7.9",
     "brfs": "^1.4.3",
     "browserify": "^13.0.1",
+    "color": "^0.11.3",
     "compstache": "^1.1.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
