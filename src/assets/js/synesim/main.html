@@ -3,19 +3,14 @@
 <nav>
 	<ul>
 		<li>
-			<a ui-sref="main" 
+			<a ui-sref="main.text-editor"
 				ui-sref-active-eq="active"
-				>main</a>
+				>edit text</a>
 		</li>
 		<li>
 			<a ui-sref="main.color-editor" 
 				ui-sref-active-eq="active"
 				>edit colors</a>
-		</li>
-		<li>
-			<a ui-sref="main.text-editor"
-				ui-sref-active-eq="active"
-				>edit text</a>
 		</li>
 	</ul>
 </nav>
@@ -25,22 +20,3 @@
 		color-map="colorMap"
 	></synesim-color-map-preview>
 </ui-view>
-
-<!--
-<synesim-text-editor
-	color-map="colorMap"
-></synesim-text-editor>
--->
-
-<!--
-<synesim-text-renderer
-	color-map="colorMap"
-	text="'Hello'"
-></synesim-text-renderer>
--->
-
-<!--
-<synesim-color-map-preview
-	color-map="colorMap"
-></synesim-color-map-preview>
--->

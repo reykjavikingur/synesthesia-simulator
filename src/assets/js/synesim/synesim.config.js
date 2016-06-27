@@ -7,7 +7,8 @@ angular.module('synesim')
 
 		$provide.decorator('synesim', function($delegate) {
 			return _.extend($delegate, {
-				endpoint: '/assets/misc/json/color-map.json'
+				endpoint: '/assets/misc/json/color-map.json',
+				text: require('./text-default.html')
 			});
 		});
 
@@ -19,13 +20,13 @@ angular.module('synesim')
 			})
 			.state('main.color-editor', {
 				url: 'color-editor',
-				template: 'color editor'
+				template: '<synesim-color-map-editor color-map="colorMap"></synesim-color-map-editor>'
 			})
 			.state('main.text-editor', {
 				url: 'text-editor',
 				template: '<synesim-text-editor color-map="colorMap"></synesim-text-editor>'
 			});
 
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/text-editor');
 
 	});

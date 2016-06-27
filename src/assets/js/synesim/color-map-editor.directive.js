@@ -12,6 +12,36 @@ angular.module('synesim')
 
 		function postLink(scope, iElement, iAttributes) {
 
+			scope.$watch('colorMap', function() {
+				_setCode();
+			});
+
+			scope.selectGrapheme = function selectGrapheme(grapheme) {
+				scope.selectedGrapheme = grapheme;
+				scope.selectedColor = scope.colorMap.color(grapheme);
+			};
+
+			scope.deselectGrapheme = function deselectGrapheme() {
+				scope.selectedGrapheme = null;
+				scope.selectedColor = null;
+			}
+
+			scope.$watch('selectedColor', function() {
+				if (scope.selectedColor && scope.selectedGrapheme && scope.colorMap) {
+					scope.colorMap.color(scope.selectedGrapheme, scope.selectedColor);
+					_setCode();
+				}
+			});
+
+			function _setCode() {
+				if (scope.colorMap) {
+					var data = scope.colorMap.toData();
+					scope.code = JSON.stringify(data);
+				} else {
+					scope.code = '';
+				}
+			}
+
 		}
 
 	});

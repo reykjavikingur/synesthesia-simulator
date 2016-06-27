@@ -1,0 +1,51 @@
+.color-map-editor {
+
+	position: relative;
+
+	.grapheme {
+		@include text-outline(#666);
+	}
+
+	li.grapheme {
+		display: inline-block;
+		font-size: 5rem;
+		width: 5rem;
+		cursor: pointer;
+		border: 1px solid #ccc;
+		text-align: center;
+
+		&:hover {
+			border-color: #333;
+		}
+	}
+
+	.dialog {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(127, 127, 127, 0.5);
+
+		.close {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+
+		&__panel {
+			background-color: #eee;
+			margin: 5em 5em;
+
+			.grapheme {
+				display: inline-block;
+				font-size: 10rem;
+			}
+		}
+	}
+
+	textarea.code {
+		width: 100%;
+	}
+
+}

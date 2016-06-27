@@ -1,4 +1,4 @@
-angular.module('synesim', ['ui.router']);
+angular.module('synesim', ['ui.router', 'mp.colorPicker']);
 
 require('./synesim.config');
 require('./synesim.run');

@@ -1,1 +1,27 @@
-color map editor
+<div class="color-map-editor">
+	<ul class="graphemes">
+		<li class="grapheme" 
+			ng-repeat="grapheme in colorMap.graphemes" 
+			ng-click="selectGrapheme(grapheme)"
+			ng-bind="grapheme"
+			ng-style="{
+				color: colorMap.color(grapheme)
+			}"
+			></li>
+	</ul>
+	<div class="dialog" ng-show="selectedGrapheme">
+		<div class="dialog__panel">
+			<color-picker ng-model="selectedColor"></color-picker>
+			<span class="grapheme" 
+				ng-bind="selectedGrapheme"
+				ng-style="{
+					color: selectedColor
+				}"
+				></span>
+		</div>
+		<button class="close" ng-click="deselectGrapheme()">close</button>
+	</div>
+	<p>Code:</p>
+	<textarea readonly class="code" ng-bind="code"></textarea>
+	
+</div>
