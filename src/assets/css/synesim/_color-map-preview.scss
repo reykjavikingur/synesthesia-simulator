@@ -1,0 +1,18 @@
+.color-map-preview {
+
+	ul li {
+		display: inline-block;
+	}
+
+	$shadow-color: #666;
+
+	span {
+		font-size: 2em;
+		letter-spacing: 1px;
+		text-shadow: 
+			-1px -1px $shadow-color,
+			-1px 1px $shadow-color,
+			1px -1px $shadow-color,
+			1px 1px $shadow-color;
+	}
+}

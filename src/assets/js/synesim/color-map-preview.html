@@ -1,0 +1,13 @@
+<div class="color-map-preview">
+
+<ul>
+<li ng-repeat="grapheme in colorMap.graphemes">
+	<span ng-bind="grapheme"
+		ng-style="{
+			color: colorMap.color(grapheme)
+		}"
+	></span>
+</li>
+</ul>
+
+</div>

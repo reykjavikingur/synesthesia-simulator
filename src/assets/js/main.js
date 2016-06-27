@@ -8,3 +8,5 @@ var q = query();
 if (q.audit) {
 	audit.log();
 }
+
+require('./synesim/synesim.module');
