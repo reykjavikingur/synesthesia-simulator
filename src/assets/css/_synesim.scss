@@ -2,3 +2,27 @@
 @import "synesim/text-renderer";
 @import "synesim/text-editor";
 @import "synesim/color-map-preview";
+
+nav {
+	ul {
+		li {
+			display: inline-block;
+			border: 1px solid #666;
+
+			a {
+				display: inline-block;
+				padding: 0.2em 1.0em;
+				text-decoration: none;
+				color: #33c;
+				border: 1px solid rgba(0, 0, 0, 0);
+				&:hover {
+					background-color: #cc9;
+				}
+				&.active {
+					color: #333;
+					background-color: #eee;
+				}
+			}
+		}
+	}
+}

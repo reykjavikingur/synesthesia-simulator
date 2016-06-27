@@ -1,8 +1,36 @@
 <h1>Synesthesia Simulator</h1>
 
+<nav>
+	<ul>
+		<li>
+			<a ui-sref="main" 
+				ui-sref-active-eq="active"
+				>main</a>
+		</li>
+		<li>
+			<a ui-sref="main.color-editor" 
+				ui-sref-active-eq="active"
+				>edit colors</a>
+		</li>
+		<li>
+			<a ui-sref="main.text-editor"
+				ui-sref-active-eq="active"
+				>edit text</a>
+		</li>
+	</ul>
+</nav>
+
+<ui-view>
+	<synesim-color-map-preview
+		color-map="colorMap"
+	></synesim-color-map-preview>
+</ui-view>
+
+<!--
 <synesim-text-editor
 	color-map="colorMap"
 ></synesim-text-editor>
+-->
 
 <!--
 <synesim-text-renderer

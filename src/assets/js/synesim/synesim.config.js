@@ -16,6 +16,14 @@ angular.module('synesim')
 				url: '/',
 				template: require('./main.html'),
 				controller: 'synesimController'
+			})
+			.state('main.color-editor', {
+				url: 'color-editor',
+				template: 'color editor'
+			})
+			.state('main.text-editor', {
+				url: 'text-editor',
+				template: '<synesim-text-editor color-map="colorMap"></synesim-text-editor>'
 			});
 
 		$urlRouterProvider.otherwise('/');

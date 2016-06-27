@@ -1,5 +1,5 @@
 angular.module('synesim')
-	.directive('synesimTextEditor', function() {
+	.directive('synesimTextEditor', function(synesim) {
 
 		return {
 			restrict: 'E',
@@ -11,7 +11,7 @@ angular.module('synesim')
 		};
 
 		function postLink(scope, iElement, iAttributes) {
-
+			scope.synesim = synesim;
 		}
 
 	})
