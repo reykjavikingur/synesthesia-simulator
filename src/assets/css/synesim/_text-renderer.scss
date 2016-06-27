@@ -1,0 +1,4 @@
+.text-renderer {
+	font-size: 2em;
+	@include text-outline(#666);
+}
