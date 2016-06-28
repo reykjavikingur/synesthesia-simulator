@@ -1,5 +1,5 @@
 angular.module('synesim')
-	.directive('synesimColorMapEditor', function() {
+	.directive('synesimColorMapEditor', function(synesim) {
 
 		return {
 			restrict: 'E',
@@ -24,6 +24,9 @@ angular.module('synesim')
 			scope.deselectGrapheme = function deselectGrapheme() {
 				scope.selectedGrapheme = null;
 				scope.selectedColor = null;
+				if (scope.colorMap) {
+					synesim.colorMap(scope.colorMap);
+				}
 			}
 
 			scope.$watch('selectedColor', function() {

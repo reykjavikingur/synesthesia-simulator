@@ -7,8 +7,13 @@ angular.module('synesim')
 
 		$provide.decorator('synesim', function($delegate) {
 			return _.extend($delegate, {
-				endpoint: '/assets/misc/json/color-map.json',
 				text: require('./text-default.html')
+			});
+		});
+
+		$provide.decorator('colorMapRemote', function($delegate) {
+			return _.extend($delegate, {
+				endpoint: '/assets/misc/json/color-map.json',
 			});
 		});
 
