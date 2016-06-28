@@ -1865,7 +1865,7 @@ angular.module('synesim')
 
 		$provide.decorator('colorMapRemote', ["$delegate", function($delegate) {
 			return _.extend($delegate, {
-				endpoint: '/assets/misc/json/color-map.json',
+				endpoint: window.ENV.synesim.endpoint
 			});
 		}]);
 

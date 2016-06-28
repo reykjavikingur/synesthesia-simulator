@@ -8,6 +8,13 @@
 </head>
 <body>
 <ui-view></ui-view>
+<script type="text/javascript">
+window.ENV = {
+	synesim: {
+		endpoint: 'assets/misc/json/color-map.json'
+	}
+};
+</script>
 <script type="text/javascript" src="assets/vendor/js/jquery.js"></script>
 <script type="text/javascript" src="assets/vendor/js/angular.js"></script>
 <script type="text/javascript" src="assets/vendor/js/angular-ui-router.js"></script>
