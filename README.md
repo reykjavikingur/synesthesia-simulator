@@ -1,6 +1,8 @@
 # Synesthesia Simulator
 
-synesim
+"synesim" is an Angular application that simulates grapheme-color synesthesia.
+
+See the DEMO: [https://reykjavikingur.github.io/synesthesia-simulator/#/]
 
 ## Usage
 
