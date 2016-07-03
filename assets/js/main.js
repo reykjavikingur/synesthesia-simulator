@@ -1768,7 +1768,7 @@ angular.module('synesim')
 
 	}]);
 },{"./color-map-editor.html":10}],10:[function(require,module,exports){
-module.exports = '<div class="color-map-editor">\n	<ul class="graphemes">\n		<li class="grapheme" \n			ng-repeat="grapheme in colorMap.graphemes" \n			ng-click="selectGrapheme(grapheme)"\n			ng-bind="grapheme"\n			ng-style="{\n				color: colorMap.color(grapheme)\n			}"\n			></li>\n	</ul>\n	<div class="dialog" ng-show="selectedGrapheme">\n		<div class="dialog__panel">\n			<color-picker ng-model="selectedColor"></color-picker>\n			<span class="grapheme" \n				ng-bind="selectedGrapheme"\n				ng-style="{\n					color: selectedColor\n				}"\n				></span>\n		</div>\n		<button class="close" ng-click="deselectGrapheme()">close</button>\n	</div>\n	<p>Code:</p>\n	<textarea readonly class="code" ng-bind="code"></textarea>\n	\n</div>';
+module.exports = '<div class="color-map-editor">\n	<p>Changes you make to the color scheme will be stored locally. Clear your browser cookies to reset.</p>\n	<ul class="graphemes">\n		<li class="grapheme" \n			ng-repeat="grapheme in colorMap.graphemes" \n			ng-click="selectGrapheme(grapheme)"\n			ng-bind="grapheme"\n			ng-style="{\n				color: colorMap.color(grapheme)\n			}"\n			></li>\n	</ul>\n	<div class="dialog" ng-show="selectedGrapheme">\n		<div class="dialog__panel">\n			<color-picker ng-model="selectedColor"></color-picker>\n			<span class="grapheme" \n				ng-bind="selectedGrapheme"\n				ng-style="{\n					color: selectedColor\n				}"\n				></span>\n		</div>\n		<button class="close" ng-click="deselectGrapheme()">close</button>\n	</div>\n	<p>Code:</p>\n	<textarea readonly class="code" ng-bind="code"></textarea>\n	\n</div>';
 },{}],11:[function(require,module,exports){
 var ColorMap = require('synesim/color-map');
 
@@ -1848,7 +1848,7 @@ angular.module('synesim')
 
 	}])
 },{"synesim/color-map":1}],15:[function(require,module,exports){
-module.exports = '<h1>Synesthesia Simulator</h1>\n\n<nav>\n	<ul>\n		<li>\n			<a ui-sref="main.text-editor"\n				ui-sref-active-eq="active"\n				>edit text</a>\n		</li>\n		<li>\n			<a ui-sref="main.color-editor" \n				ui-sref-active-eq="active"\n				>edit colors</a>\n		</li>\n	</ul>\n</nav>\n\n<ui-view>\n	<synesim-color-map-preview\n		color-map="colorMap"\n	></synesim-color-map-preview>\n</ui-view>\n';
+module.exports = '<h1>Synesthesia Simulator</h1>\n\n<nav>\n	<ul>\n		<li>\n			<a ui-sref="main.text-editor"\n				ui-sref-active-eq="active"\n				>edit text</a>\n		</li>\n		<li>\n			<a ui-sref="main.color-editor" \n				ui-sref-active-eq="active"\n				>edit colors</a>\n		</li>\n	</ul>\n</nav>\n\n<ui-view>\n	<synesim-color-map-preview\n		color-map="colorMap"\n	></synesim-color-map-preview>\n</ui-view>\n\n<hr/>\nDeveloped on <a href="https://github.com/reykjavikingur/synesthesia-simulator">github.com/reykjavikingur/synesthesia-simulator</a>';
 },{}],16:[function(require,module,exports){
 var _ = require('underscore');
 
