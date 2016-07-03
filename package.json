@@ -15,7 +15,11 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": ">=5.9.1"
+    "node": ">=1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:reykjavikingur/synesthesia-simulator.git"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
